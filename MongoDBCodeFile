@@ -367,3 +367,591 @@ db.staffInformation.insert([
  
 ])
 
+*************************************************************************************************************************************
+
+ReplicaSet for StaffInformation Collection:
+
+Checking ReplicaSet status: 
+
+C:\>mongo --port 27018
+MongoDB shell version v4.0.8                                                                                                                                                                                       connecting to: mongodb://127.0.0.1:27018/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("bcef0ee1-ca86-46e3-9c01-757b616da508") }
+MongoDB server version: 4.0.8
+Server has startup warnings:
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten]
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten]
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2019-05-05T03:44:22.677-0700 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+hospitalInformationReplicaSet:PRIMARY> rs.status()
+{
+        "set" : "hospitalInformationReplicaSet",
+        "date" : ISODate("2019-05-07T20:45:58.260Z"),
+        "myState" : 1,
+        "term" : NumberLong(10),
+        "syncingTo" : "",
+        "syncSourceHost" : "",
+        "syncSourceId" : -1,
+        "heartbeatIntervalMillis" : NumberLong(2000),
+        "optimes" : {
+                "lastCommittedOpTime" : {
+                        "ts" : Timestamp(1557261953, 1),
+                        "t" : NumberLong(10)
+                },
+                "readConcernMajorityOpTime" : {
+                        "ts" : Timestamp(1557261953, 1),
+                        "t" : NumberLong(10)
+                },
+                "appliedOpTime" : {
+                        "ts" : Timestamp(1557261953, 1),
+                        "t" : NumberLong(10)
+                },
+                "durableOpTime" : {
+                        "ts" : Timestamp(1557261953, 1),
+                        "t" : NumberLong(10)
+                }
+        },
+        "lastStableCheckpointTimestamp" : Timestamp(1557261943, 1),
+        "members" : [
+                {
+                        "_id" : 0,
+                        "name" : "localhost:27017",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 132139,
+                        "optime" : {
+                                "ts" : Timestamp(1557261953, 1),
+                                "t" : NumberLong(10)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1557261953, 1),
+                                "t" : NumberLong(10)
+                        },
+                        "optimeDate" : ISODate("2019-05-07T20:45:53Z"),
+                        "optimeDurableDate" : ISODate("2019-05-07T20:45:53Z"),
+                        "lastHeartbeat" : ISODate("2019-05-07T20:45:58.046Z"),
+                        "lastHeartbeatRecv" : ISODate("2019-05-07T20:45:57.503Z"),
+                        "pingMs" : NumberLong(0),
+                        "lastHeartbeatMessage" : "",
+                        "syncingTo" : "localhost:27018",
+                        "syncSourceHost" : "localhost:27018",
+                        "syncSourceId" : 1,
+                        "infoMessage" : "",
+                        "configVersion" : 1
+                },
+                {
+                        "_id" : 1,
+                        "name" : "localhost:27018",
+                        "health" : 1,
+                        "state" : 1,
+                        "stateStr" : "PRIMARY",
+                        "uptime" : 208896,
+                        "optime" : {
+                                "ts" : Timestamp(1557261953, 1),
+                                "t" : NumberLong(10)
+                        },
+                        "optimeDate" : ISODate("2019-05-07T20:45:53Z"),
+                        "syncingTo" : "",
+                        "syncSourceHost" : "",
+                        "syncSourceId" : -1,
+                        "infoMessage" : "",
+                        "electionTime" : Timestamp(1557223629, 1),
+                        "electionDate" : ISODate("2019-05-07T10:07:09Z"),
+                        "configVersion" : 1,
+                        "self" : true,
+                        "lastHeartbeatMessage" : ""
+                },
+                {
+                        "_id" : 2,
+                        "name" : "localhost:27019",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 132139,
+                        "optime" : {
+                                "ts" : Timestamp(1557261953, 1),
+                                "t" : NumberLong(10)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1557261953, 1),
+                                "t" : NumberLong(10)
+                        },
+                        "optimeDate" : ISODate("2019-05-07T20:45:53Z"),
+                        "optimeDurableDate" : ISODate("2019-05-07T20:45:53Z"),
+                        "lastHeartbeat" : ISODate("2019-05-07T20:45:58.046Z"),
+                        "lastHeartbeatRecv" : ISODate("2019-05-07T20:45:57.156Z"),
+                        "pingMs" : NumberLong(0),
+                        "lastHeartbeatMessage" : "",
+                        "syncingTo" : "localhost:27018",
+                        "syncSourceHost" : "localhost:27018",
+                        "syncSourceId" : 1,
+                        "infoMessage" : "",
+                        "configVersion" : 1
+                }
+        ],
+        "ok" : 1,
+        "operationTime" : Timestamp(1557261953, 1),
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1557261953, 1),
+                "signature" : {
+                        "hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+                        "keyId" : NumberLong(0)
+                }
+        }
+}
+
+Primary node (port 27018):
+
+hospitalInformationReplicaSet:PRIMARY> db.staffInformation.find().pretty()
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf03"),
+        "staffId" : "s2",
+        "firstName" : "Jack",
+        "lastName" : "Liam",
+        "qualification" : "B.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T13:00:00" : 1,
+                "2019-02-02T17:00:00" : 1,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf01"),
+        "staffId" : "s1",
+        "firstName" : "Jacob",
+        "lastName" : "Noah",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-07-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 1,
+                "2019-02-02T18:00:00" : 1,
+                "2019-03-01T12:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf04"),
+        "staffId" : "s2",
+        "firstName" : "Moritz",
+        "lastName" : "Anton",
+        "qualification" : "M.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T16:00:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T15:00:00" : 1,
+                "2019-03-03T09:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf05"),
+        "staffId" : "s2",
+        "firstName" : "Henry",
+        "lastName" : "Maximilian",
+        "qualification" : "B.com.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-08-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:30:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf02"),
+        "staffId" : "s1",
+        "firstName" : "Mila",
+        "lastName" : "Lea",
+        "qualification" : "M.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57fc104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:00:00" : 1,
+                "2019-02-02T20:00:00" : 1,
+                "2019-03-01T12:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf00"),
+        "staffId" : "s1",
+        "firstName" : "Harry",
+        "lastName" : "Mason",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-01T13:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 0,
+                "2019-02-02T08:00:00" : 1,
+                "2019-03-01T10:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+
+
+Secondary node (port 27017): 
+
+C:\>mongo --port 27017
+MongoDB shell version v4.0.8
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("bbe74ec0-964e-44ba-9f03-e5ea36ead63e") }
+MongoDB server version: 4.0.8
+Server has startup warnings:
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten]
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten]
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2019-05-05T03:43:55.114-0700 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+hospitalInformationReplicaSet:SECONDARY> rs.slaveOk()
+hospitalInformationReplicaSet:SECONDARY> db.staffInformation.find().pretty()
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf00"),
+        "staffId" : "s1",
+        "firstName" : "Harry",
+        "lastName" : "Mason",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-01T13:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 0,
+                "2019-02-02T08:00:00" : 1,
+                "2019-03-01T10:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf01"),
+        "staffId" : "s1",
+        "firstName" : "Jacob",
+        "lastName" : "Noah",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-07-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 1,
+                "2019-02-02T18:00:00" : 1,
+                "2019-03-01T12:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf02"),
+        "staffId" : "s1",
+        "firstName" : "Mila",
+        "lastName" : "Lea",
+        "qualification" : "M.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57fc104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:00:00" : 1,
+                "2019-02-02T20:00:00" : 1,
+                "2019-03-01T12:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf03"),
+        "staffId" : "s2",
+        "firstName" : "Jack",
+        "lastName" : "Liam",
+        "qualification" : "B.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T13:00:00" : 1,
+                "2019-02-02T17:00:00" : 1,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf04"),
+        "staffId" : "s2",
+        "firstName" : "Moritz",
+        "lastName" : "Anton",
+        "qualification" : "M.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T16:00:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T15:00:00" : 1,
+                "2019-03-03T09:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf05"),
+        "staffId" : "s2",
+        "firstName" : "Henry",
+        "lastName" : "Maximilian",
+        "qualification" : "B.com.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-08-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:30:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+
+Another secondary node (port 27019):
+
+C:\>mongo --port 27019
+MongoDB shell version v4.0.8
+connecting to: mongodb://127.0.0.1:27019/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("84a5a32c-6f13-43e4-84a0-72184606c1f2") }
+MongoDB server version: 4.0.8
+Server has startup warnings:
+2019-05-05T03:44:37.258-0700 I CONTROL  [initandlisten]
+2019-05-05T03:44:37.258-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-05-05T03:44:37.258-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-05-05T03:44:37.259-0700 I CONTROL  [initandlisten]
+2019-05-05T03:44:37.259-0700 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2019-05-05T03:44:37.259-0700 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+2019-05-05T03:44:37.259-0700 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+2019-05-05T03:44:37.259-0700 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2019-05-05T03:44:37.259-0700 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2019-05-05T03:44:37.260-0700 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2019-05-05T03:44:37.260-0700 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+hospitalInformationReplicaSet:SECONDARY> rs.slaveOk()
+hospitalInformationReplicaSet:SECONDARY> db.staffInformation.find().pretty()
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf01"),
+        "staffId" : "s1",
+        "firstName" : "Jacob",
+        "lastName" : "Noah",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-07-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 1,
+                "2019-02-02T18:00:00" : 1,
+                "2019-03-01T12:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf03"),
+        "staffId" : "s2",
+        "firstName" : "Jack",
+        "lastName" : "Liam",
+        "qualification" : "B.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T13:00:00" : 1,
+                "2019-02-02T17:00:00" : 1,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf05"),
+        "staffId" : "s2",
+        "firstName" : "Henry",
+        "lastName" : "Maximilian",
+        "qualification" : "B.com.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-08-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:30:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf04"),
+        "staffId" : "s2",
+        "firstName" : "Moritz",
+        "lastName" : "Anton",
+        "qualification" : "M.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T16:00:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T15:00:00" : 1,
+                "2019-03-03T09:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf00"),
+        "staffId" : "s1",
+        "firstName" : "Harry",
+        "lastName" : "Mason",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-01T13:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 0,
+                "2019-02-02T08:00:00" : 1,
+                "2019-03-01T10:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 1
+        }
+}
+{
+        "_id" : ObjectId("5ccebf4d1420ea46deaedf02"),
+        "staffId" : "s1",
+        "firstName" : "Mila",
+        "lastName" : "Lea",
+        "qualification" : "M.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57fc104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:00:00" : 1,
+                "2019-02-02T20:00:00" : 1,
+                "2019-03-01T12:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        }
+}
+
+
+
+
