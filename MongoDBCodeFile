@@ -1,1 +1,104 @@
 MongoDB Code
+db.createCollection("doctorInformation")
+
+db.doctorInformation.insert(
+{
+    "doctorId" : "d1",
+    "name" : "Dr. Ramesh Reddy",
+    "qualification" : "MBBS, MS",
+    "experience" : "27years",
+    "specialization" : "Surgery",
+    "publications" : [ 
+        "Medknow Publications", 
+        "SAGE Publications"
+    ],
+    "awards" : [ 
+        "National Prize for Medicine", 
+        "E.B. Wilson Medal"
+    ],
+        "researchPaper" : [ 
+        "Academic Medicine", 
+        "American Journal of Respiratory and Critical Care Medicine"
+    ],
+    "start" : "2018-05-05T13:00:00",
+    "timeZone" : "Europe/Germany",
+    "doctorTimeSlots" : {
+        "2019-03-01T13:00:00" : 0.0,
+        "2019-05-01T13:00:00" : 1.0,
+        "2019-06-25T13:00:00" : 0.0,
+        "2019-08-12T13:00:00" : 1.0,
+        "2019-04-19T13:00:00" : 0.0,
+        "2019-07-20T13:00:00" : 1.0
+    }
+}
+)
+
+//----------------------------------------------------------------------------------------------------------------------
+
+db.doctorInformation.insert(
+{
+    "doctorId" : "d2",
+    "name" : "Dr. Alexander Graf",
+    "qualification" : "MBBS, MD - General Medicine, DM - Neurology, DNB - Neurology",
+    "experience" : "27years",
+    "specialization" : "Neurology",
+    "publications" : [ 
+        "Doctors Academy Publication", 
+        "JAMA Internal Medicine"
+    ],
+    "awards" : [ 
+        "Fellowship of the Royal College of Physicians of London (FRCP)", 
+        "Life time achievement award, East Delhi Physicians Association (EDPA)"
+    ],
+    "researchPaper" : [ 
+        "Neural Regeneration Research", 
+        "Developmental Neurorehabilitation"
+    ],
+    "start" : "2018-05-05T13:00:00",
+    "timeZone" : "Europe/Germany",
+    "doctorTimeSlots" : {
+        "2019-03-01T13:00:00" : 0.0,
+        "2019-02-23T13:00:00" : 1.0,
+        "2019-04-10T13:00:00" : 0.0,
+        "2019-06-26T13:00:00" : 1.0,
+        "2019-08-04T13:00:00" : 0.0,
+        "2019-10-18T13:00:00" : 1.0
+    }
+}
+)
+
+//----------------------------------------------------------------------------------------------------------------------
+
+db.doctorInformation.insert(
+{
+    "doctorId" : "d3",
+    "name" : "Dr. Maria Thomas",
+    "qualification" : "MD - Skin,VD & Leprosy, MBBS",
+    "experience" : "11years",
+    "specialization" : "Dermatology",
+    "publications" : [ 
+        "Israel Medical Association Journal", 
+        "JAMA Dermatology"
+    ],
+    "awards" : [ 
+        "Dr. Sardari Lal Memorial Award", 
+        "Aronson Prize"
+    ],
+        "researchPaper" : [ 
+        "American Journal of Translational Research", 
+        "Research and Humanities in Medical Education"
+    ],
+    "start" : "2018-05-05T13:00:00",
+    "timeZone" : "Europe/Germany",
+    "doctorTimeSlots" : {
+        "2019-03-01T13:00:00" : 0.0,
+        "2019-02-01T13:00:00" : 1.0,
+        "2019-06-25T13:00:00" : 0.0,
+        "2019-08-12T13:00:00" : 1.0,
+        "2019-10-19T13:00:00" : 0.0,
+        "2019-07-05T13:00:00" : 1.0
+    }
+}
+)
+
+//----------------------------------------------------------------------------------------------------------------------
