@@ -102,3 +102,163 @@ db.doctorInformation.insert(
 )
 
 //----------------------------------------------------------------------------------------------------------------------
+
+db.createCollection("patientInformation")
+
+db.patientInformation.insert(
+{ 
+ 
+    "doctorId" : "d1", 
+    "registrationDate" : "01.04.2019", 
+    "firstName" : "Paul", 
+    "lastName" : "Walter", 
+    "age" : "27", 
+    "address" : "schulstrasse 4", 
+    "gender" : "male", 
+    "occupation" : "civilEngineer", 
+    "dischargeDate" : "08.04.2019", 
+    "medicalHistory" : {
+        "_id" : ObjectId("5ccae63b12a1fe175421815c"), 
+        "disease" : "malaria", 
+        "medicinesPrescribed" : "malarone", 
+        "dietPlan" : "eat fruits, avoid junk and processed foods", 
+        "dateWhenDiseaseOccurred" : "20.02.2019", 
+        "labReports" : "PCR"
+    }, 
+    "currentDisease" : {
+        "disease" : "malaria-chronic", 
+        "typeOfDisease" : "plasmodium malariae", 
+        "symptoms" : "fever, vomiting", 
+        "dietPlan" : "eat carrot, beetroots, papaya, berries", 
+        "medicinesPrescribed" : "mefloquine, quinine"
+    }, 
+    "currentLabReports" : {
+        "bloodTest" : {
+            "_id" : ObjectId("5ccae5fb12a1fe1754218155"), 
+            "haemoglobin" : "positive, 14.5 gm/dl", 
+            "malaria antigen blood test" : "positive, non falciparum plasmodium species", 
+            "bilirubin" : "negative, 6/4.7 mg/dl"
+        }, 
+        "thyroidTest" : {
+            "_id" : ObjectId("5ccae65a12a1fe1754218162"), 
+            "throglobin" : "positive, 5 IU/ml", 
+            "throxine" : "negative, 7.0 DNR mg/dl", 
+            "tsh" : "negative, 1.5 mIU/ml"
+        }
+    }
+})
+****************************************************************************************************************************************
+
+db.patientInformation.insert(
+
+{ 
+     "doctorId" : "d2", 
+    "registrationDate" : "06.04.2019", 
+    "firstName" : "John", 
+    "lastName" : "Gerhard", 
+    "age" : "32", 
+    "address" : "Grüner Weg 6", 
+    "gender" : "male", 
+    "occupation" : "painter", 
+    "dischargeDate" : "13.04.2019", 
+    "medicalHistory" : {
+        "_id" : ObjectId("5ccae5fb12a1fe1754218155"), 
+        "disease" : "malaria", 
+        "medicinesPrescribed" : "acetaminophen", 
+        "dietPlan" : "drink coconut water, avoid spicy foods", 
+        "dateWhenDiseaseOccurred" : "27.02.2019", 
+        "labReports" : "bloodTest"
+    }, 
+    "currentDisease" : {
+        "disease" : "malaria-chronic", 
+        "typeOfDisease" : "typhoid-O", 
+        "symptoms" : "abdominal pain, severe headache", 
+        "dietPlan" : "eat fruits, glucose water, soft rice and more water", 
+        "medicinesPrescribed" : "ceftriaxone, ciprofloxacin"
+    }, 
+    "currentLabReports" : {
+        "bloodCultureTest" : {
+            "_id" : ObjectId("5ccae55412a1fe1754218150"), 
+            "test group blood culture" : "positive 104 Igm", 
+            "control group III" : "negative 22 IgM"
+        }, 
+        "haemotologicalTest" : {
+            "_id" : ObjectId("5ccae66912a1fe1754218165"), 
+            "WBC Count" : "postive, 8(10.6) /ul", 
+            "haemoglobin" : "negative, 46(61.3) gm/dl", 
+            "platelet count" : "negative, 45(60) /ul"
+        }
+    }
+})
+****************************************************************************************************************************************
+db.patientInformation.insert(
+{
+    "doctorId" : "d1", 
+    "registrationDate" : "01.05.2019", 
+    "firstName" : "Emma", 
+    "lastName" : "Watson", 
+    "age" : "29", 
+    "address" : "schulstrasse 41", 
+    "gender" : "male", 
+    "occupation" : "electricalEngineer", 
+    "dischargeDate" : "08.05.2019", 
+    "medicalHistory" : {
+        "_id" : ObjectId("5ccae61a12a1fe1754218158"), 
+        "disease" : "meningitis", 
+        "medicinesPrescribed" : "malarone", 
+        "dietPlan" : "eat fruits, avoid junk and processed foods", 
+        "dateWhenDiseaseOccurred" : "25.03.2019", 
+        "labReports" : "CDC"
+    }, 
+    "currentDisease" : {
+        "disease" : "lung cancers", 
+        "typeOfDisease" : "Adenocarcinoma", 
+        "symptoms" : "fever, vomiting", 
+        "dietPlan" : "eat carrot, beetroots, papaya, berries", 
+        "medicinesPrescribed" : "cisplatin, pemetrexed"
+    }, 
+    "currentLabReports" : {
+        "_id" : ObjectId("5cca1f2312a1fe17542180ee"), 
+        "bloodTest" : {
+            "haemoglobin" : "positive, 13.5 gm/dl"
+        }, 
+        "CT Scan" : "55% sensitivity, 83% NPV"
+    }
+})
+*************************************************************************************************************************************
+db.patientInformation.insert(
+{ 
+    "doctorId" : "d2", 
+    "registrationDate" : "15.04.2019", 
+    "firstName" : "Kavya", 
+    "lastName" : "Shetty", 
+    "age" : "23", 
+    "address" : "schulstrasse 4", 
+    "gender" : "female", 
+    "occupation" : "serviceEngineer", 
+    "dischargeDate" : "28.04.2019", 
+    "medicalHistory" : {
+        "_id" : ObjectId("5ccae64a12a1fe175421815f"), 
+        "disease" : "meningitis", 
+        "medicinesPrescribed" : "malarone", 
+        "dietPlan" : "eat fruits, avoid junk and processed foods", 
+        "dateWhenDiseaseOccurred" : "22.03.2019", 
+        "labReports" : "PCR, CDC"
+    }, 
+    "currentDisease" : {
+        "disease" : "meningitis-chronic", 
+        "typeOfDisease" : "plasmodium malariae", 
+        "symptoms" : "fever, vomiting", 
+        "dietPlan" : "eat carrot, beetroots, papaya, berries", 
+        "medicinesPrescribed" : "mefloquine, quinine"
+    }, 
+    "currentLabReports" : {
+        "bloodTest" : {
+            "_id" : ObjectId("5ccae66912a1fe1754218165"), 
+            "haemoglobin" : "positive, 14.5 gm/dl"
+        }
+    }
+})
+
+
+
