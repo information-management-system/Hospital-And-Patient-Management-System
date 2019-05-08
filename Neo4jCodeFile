@@ -92,19 +92,4 @@ MATCH (a:floor),(b:hospital)
 WHERE a.number = "Floor 3" AND b.name = "SRH Hospital"
 CREATE (b)-[r:has]->(a)
 RETURN a,b
-=======================================================================
-Query to get all nodes and relationships
-MATCH (n) RETURN (n)
-
-Query to check ward avaiability
-MATCH (n:ward),(o:floor),(p:hospital) 
-WHERE('available' IN labels(n))
-RETURN *
-
-Query to allocate the bed to a patient
-Match (n:ward) where n.wardNo="W7" Remove n:available set n.bed22="new ptn 2" set n:full 
-return (n)
-
-Query to know the bed's count in ward
-Match (n:floor)-[r:contains]->(m:ward) Where n.number = "Floor 3" Return m.wardNo,r.noOfbeds As NO_OF_BEDS
 
