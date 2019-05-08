@@ -1,4 +1,5 @@
 MongoDB Code
+**Creating and inserting Doctor information**
 db.createCollection("doctorInformation")
 
 db.doctorInformation.insert(
@@ -33,7 +34,6 @@ db.doctorInformation.insert(
 }
 )
 
-//----------------------------------------------------------------------------------------------------------------------
 
 db.doctorInformation.insert(
 {
@@ -66,8 +66,6 @@ db.doctorInformation.insert(
     }
 }
 )
-
-//----------------------------------------------------------------------------------------------------------------------
 
 db.doctorInformation.insert(
 {
@@ -103,6 +101,7 @@ db.doctorInformation.insert(
 
 //----------------------------------------------------------------------------------------------------------------------
 
+**Creating and inserting Patient Information**
 db.createCollection("patientInformation")
 
 db.patientInformation.insert(
@@ -147,7 +146,6 @@ db.patientInformation.insert(
         }
     }
 })
-****************************************************************************************************************************************
 
 db.patientInformation.insert(
 
@@ -190,7 +188,7 @@ db.patientInformation.insert(
         }
     }
 })
-****************************************************************************************************************************************
+
 db.patientInformation.insert(
 {
     "doctorId" : "d1", 
@@ -225,7 +223,7 @@ db.patientInformation.insert(
         "CT Scan" : "55% sensitivity, 83% NPV"
     }
 })
-*************************************************************************************************************************************
+
 db.patientInformation.insert(
 { 
     "doctorId" : "d2", 
@@ -260,7 +258,7 @@ db.patientInformation.insert(
     }
 })
 
-*************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 Utilization of GridFS to upload lab reports of file formats (PDF and jpg): 
 
 Lab report in PDF format:
@@ -283,8 +281,9 @@ C:\WINDOWS\ssystem32>mongofiles.exe -d hospitalManagementSystem get C:\Users\Des
 2019-04-30T13:09:21.436+0200 connected to: localhost
 2019-04-30T13:09:21.505+0200  finished writing to C:\Users\Desktop\CTScanReport.jpg
 
-***************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 
+**Creating and inserting Staff information** 
 db.staffInformation.insert([ 
 {   
     "staffId" : "s1",       
@@ -390,7 +389,7 @@ db.staffInformation.insert([
  
 ])
 
-************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 
 ReplicaSet - 
 
@@ -542,13 +541,128 @@ hospitalInformationReplicaSet:PRIMARY> rs.status()
         }
 }
 
-*************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 
 Inserting StaffInformation Collection in Primary node (port 27018)
 
-hospitalInformationReplicaSet:PRIMARY> db.staffInformation.insert([{"staffId" : "s1","firstName" : "Harry","lastName" : "Mason","qualification" : "B.Sc. nursing","workType" : "technical","@type": "staffInfo","uid": "2a358cee-6489-4f14-a57f-c104db4dc358","isAllDay": false,"start": "2018-05-01T13:00:00","timeZone": "Europe/Germany","staffAvailability": {"2019-02-01T14:00:00": 0,"2019-02-02T08:00:00": 1,"2019-03-01T10:00:00": 1,"2019-03-03T08:00:00": 1,"2019-03-28T12:00:00": 1}},{"staffId" : "s1","firstName" : "Jacob","lastName" : "Noah","qualification" : "B.Sc. nursing","workType" : "technical","@type": "staffInfo","uid": "2a358cee-6489-4f14-a57f-c104db4dc358","isAllDay": true,"start": "2018-07-01T10:00:00","timeZone": "Europe/Germany","staffAvailability": {"2019-02-01T14:00:00": 1,"2019-02-02T18:00:00": 1,"2019-03-01T12:00:00": 0,"2019-03-03T08:00:00": 0,"2019-03-28T12:00:00": 1}},{"staffId" : "s1","firstName" : "Mila","lastName" : "Lea","qualification" : "M.Sc. nursing","workType" : "technical","@type": "staffInfo","uid": "2a358cee-6489-4f14-a57fc104db4dc358","isAllDay": false,"start": "2018-06-01T10:00:00","timeZone": "Europe/Germany","staffAvailability": {"2019-02-01T11:00:00": 1,"2019-02-02T20:00:00": 1,"2019-03-01T12:00:00": 1,"2019-03-03T08:00:00": 1,"2019-03-28T12:00:00": 0}},{"staffId" : "s2","firstName" : "Jack","lastName" : "Liam","qualification" : "B.A.","workType" : "nonTechnical","@type": "staffInfo","uid": "2a358cee-6489-4f14-a57f-c104db4dc358","isAllDay": false,"start": "2018-05-10T10:00:00","timeZone": "Europe/Germany","staffAvailability": {"2019-02-01T13:00:00": 1,"2019-02-02T17:00:00": 1,"2019-03-01T13:00:00": 0,"2019-03-03T08:00:00": 0,"2019-03-28T12:00:00": 1}},{"staffId" : "s2","firstName" : "Moritz","lastName" : "Anton","qualification" : "M.A.","workType" : "nonTechnical","@type": "staffInfo","uid": "2a358cee-6489-4f14-a57f-c104db4dc358","isAllDay": false,"start": "2018-06-10T10:00:00","timeZone": "Europe/Germany","staffAvailability": {"2019-02-01T16:00:00": 1,"2019-02-02T17:00:00": 0,"2019-03-01T15:00:00": 1, "2019-03-03T09:00:00": 1,"2019-03-28T12:00:00": 0}},{"staffId" : "s2","firstName" : "Henry","lastName" : "Maximilian","qualification" : "B.com.","workType" : "nonTechnical","@type": "staffInfo","uid": "2a358cee-6489-4f14-a57f-c104db4dc358","isAllDay": true,"start": "2018-08-10T10:00:00","timeZone": "Europe/Germany","staffAvailability": {"2019-02-01T11:30:00": 1,"2019-02-02T17:00:00": 0,"2019-03-01T13:00:00": 0,"2019-03-03T08:00:00": 1,"2019-03-28T12:00:00": 0}}])
+hospitalInformationReplicaSet:PRIMARY> db.staffInformation.insert([
+	{
+	"staffId" : "s1",
+        "firstName" : "Harry",
+        "lastName" : "Mason",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-01T13:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 0,
+                "2019-02-02T08:00:00" : 1,
+                "2019-03-01T10:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 1
+        		       }
+	},
+	{ 
+	"staffId" : "s1",
+        "firstName" : "Jacob",
+        "lastName" : "Noah",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : true,
+        "start" : "2018-07-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 1,
+                "2019-02-02T18:00:00" : 1,
+                "2019-03-01T12:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        	}
+	},
+	{
+	"staffId" : "s1",
+        "firstName" : "Mila",
+        "lastName" : "Lea",
+        "qualification" : "M.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57fc104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-01T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T11:00:00" : 1,
+                "2019-02-02T20:00:00" : 1,
+                "2019-03-01T12:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        		}
+	},
+	{
+	"staffId" : "s2",
+        "firstName" : "Jack",
+        "lastName" : "Liam",
+        "qualification" : "B.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T13:00:00" : 1,
+                "2019-02-02T17:00:00" : 1,
+                "2019-03-01T13:00:00" : 0,
+                "2019-03-03T08:00:00" : 0,
+                "2019-03-28T12:00:00" : 1
+        			}
+	},
+	{
+	"staffId" : "s2",
+        "firstName" : "Moritz",
+        "lastName" : "Anton",
+        "qualification" : "M.A.",
+        "workType" : "nonTechnical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-06-10T10:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T16:00:00" : 1,
+                "2019-02-02T17:00:00" : 0,
+                "2019-03-01T15:00:00" : 1,
+                "2019-03-03T09:00:00" : 1,
+                "2019-03-28T12:00:00" : 0
+        			}
+	},
+	{
+	"staffId" : "s1",
+        "firstName" : "Harry",
+        "lastName" : "Mason",
+        "qualification" : "B.Sc. nursing",
+        "workType" : "technical",
+        "@type" : "staffInfo",
+        "uid" : "2a358cee-6489-4f14-a57f-c104db4dc358",
+        "isAllDay" : false,
+        "start" : "2018-05-01T13:00:00",
+        "timeZone" : "Europe/Germany",
+        "staffAvailability" : {
+                "2019-02-01T14:00:00" : 0,
+                "2019-02-02T08:00:00" : 1,
+                "2019-03-01T10:00:00" : 1,
+                "2019-03-03T08:00:00" : 1,
+                "2019-03-28T12:00:00" : 1
+        			}
+	}
+])
 
-**************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 
 Primary node (port 27018):
 
@@ -674,7 +788,7 @@ hospitalInformationReplicaSet:PRIMARY> db.staffInformation.find().pretty()
         }
 }
 
-**************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 
 Secondary node (port 27017): 
 
@@ -830,7 +944,7 @@ hospitalInformationReplicaSet:SECONDARY> db.staffInformation.find().pretty()
         }
 }
 
-**************************************************************************************************************************************
+//----------------------------------------------------------------------------------------------------------------------
 
 Another secondary node (port 27019):
 
