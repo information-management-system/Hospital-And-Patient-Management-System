@@ -261,6 +261,29 @@ db.patientInformation.insert(
 })
 
 *************************************************************************************************************************************
+Utilization of GridFS to upload lab reports of file formats (PDF and jpg): 
+
+Lab report in PDF format:
+
+C:\WINDOWS\ssystem32>mongofiles.exe -d hospitalManagementSystem put C:\Users\Desktop\CDCReport.PDF
+2019-04-30T12:35:05.331+0200 connected to: localhost
+2019-04-30T12:35.05.467+0200 added file: C:\Users\Desktop\CDCReport.PDF
+
+C:\WINDOWS\ssystem32>mongofiles.exe -d hospitalManagementSystem get C:\Users\Desktop\CDCReport.PDF
+2019-04-30T12:41:29.551+0200 connected to: localhost
+2019-04-30T12:41:29.618+0200  finished writing to C:\Users\Desktop\CDCReport.PDF
+
+Lab report in jpg format:
+
+C:\WINDOWS\ssystem32>mongofiles.exe -d hospitalManagementSystem put C:\Users\Desktop\CTScanReport.jpg
+2019-04-30T13:04:05.223+0200 connected to: localhost
+2019-04-30T13:04.05.231+0200 added file: C:\Users\Desktop\CTScanReport.jpg
+
+C:\WINDOWS\ssystem32>mongofiles.exe -d hospitalManagementSystem get C:\Users\Desktop\CTScanReport.jpg
+2019-04-30T13:09:21.436+0200 connected to: localhost
+2019-04-30T13:09:21.505+0200  finished writing to C:\Users\Desktop\CTScanReport.jpg
+
+***************************************************************************************************************************************
 
 db.staffInformation.insert([ 
 {   
