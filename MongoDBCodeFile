@@ -391,8 +391,34 @@ db.staffInformation.insert([
 ])
 
 *************************************************************************************************************************************
+Query to know the staff information with their names, staff Id, work type:
+db.staffInformation.aggregate([
+{$project: {staffId : 1, firstName : 1, workType : 1, _id:0, }}
+])
 
+Query to retrieve the staff information count:
+db.staffInformation.aggregate([
+{$match: {workType:"technical"}},
+{$group: {
+    	_id:"$staffId",
+    	numberOfTechnicalStaff: {$sum : 1 }
+		 }
+}     
+])
+
+Query to check the staff availability:
+db.staffInformation.find({"staffAvailability.2019-03-28T12:00:00" : 1},{"staffId" : 1, "firstName" : 1, "workType" : 1, "_id" : 0})
 ReplicaSet for StaffInformation Collection:
+
+Query to know individual staff information:
+db.staffInformation.aggregate([
+{$match: {firstName : "Harry"}},
+{$project: {"staffId" : 1, "workType" : 1, "staffAvailability" : 1, "_id" : 0}}
+])
+
+************************************************************************************************************************************
+
+ReplicaSet - 
 
 Checking ReplicaSet status: 
 
