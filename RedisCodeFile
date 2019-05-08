@@ -1,1 +1,44 @@
-Redis
+
+Redis Queries
+
+Insertion of consumable materials:
+
+hmset product1 name "cottonRoll" manufacturing_date 20.03.2019 expiry_date 27.03.2019 quantity 1000 manufacturer "Apollo"
+
+
+hmset product2 name "syringes" manufacturing_date 20.03.2019 expiry_date 22.03.2019 quantity 2000 manufacturer “Avena”
+
+
+hmset product3 name "needles" manufacturing_date 01.03.2019 expiry_date 22.05.2019 quantity 1500 manufacturer "Medtech"
+
+
+hmset product4 name "glucoseBottles" manufacturing_date 01.04.2019 expiry_date 01.05.2020 quantity 2500 manufacturer "KMILTD"
+
+
+hmset product5 name "gloves" manufacturing_date 01.09.2019 expiry_date 12.12.2020 quantity 5500 manufacturer "Caltech"
+
+
+hmset product6 name "bandages" manufacturing_date 01.09.2019 expiry_date 12.02.2019 quantity 6500 manufacturer "MedPlus"
+
+
+Insertion of Redis List:
+
+lpush productInformation product6
+lpush productInformation product5
+lpush productInformation product4
+lpush productInformation product3
+lpush productInformation product2
+lpush productInformation product1
+
+
+To display the Redis List:
+lrange productInformation 0 10
+
+To retrieve the product information:
+
+hgetall product1
+hgetall product2
+hgetall product3
+hgetall product4
+hgetall product5
+hgetall product6
