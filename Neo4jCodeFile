@@ -1,1 +1,99 @@
-Neo4jDB Code
+
+Neo4j DB Code 
+-----------------------------------
+
+**Creating Hospital, Floor1 and Ward 1 Node and Relationship between them.**
+
+CREATE (Hospital:hospital{name:"SRH Hospital"})-[:has]->(Floor1:floor{number: "Floor 1"})
+-[:contains{noOfbeds:4}]->(Ward1:ward:available{wardNo:"W1",typeOfWard:"General Ward 1",bed1:"P1",bed2:"P2",bed3:"P3",bed4:""})
+
+** Creating Ward Nodes for Floor 1**
+CREATE (Ward2:ward:full{wardNo:"W2", typeOfWard:"General Ward 2",bed5:"P4",bed6:"P5",bed7:"P6",bed8:"P7"})
+CREATE (Ward3:ward:available{wardNo:"W3", typeOfWard:"General Ward 3",bed9:"P8",bed10:"P9",bed11:"P10",bed12:""})
+CREATE (Ward4:ward:full{wardNo:"W4", typeOfWard:"General Ward 4",bed13:"P11",bed14:"P12",bed15:"P13",bed16:"P14"})
+
+** Creating Relation Between Ward Nodes and Floor 1**
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W2" AND b.number= "Floor 1"
+CREATE (b)-[:contains{noOfbeds:4}]->(a)
+RETURN a,b
+
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W3" AND b.number= "Floor 1"
+CREATE (b)-[:contains{noOfbeds:4}]->(a)
+RETURN a,b
+
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W4" AND b.number= "Floor 1"
+CREATE (b)-[:contains{noOfbeds:4}]->(a)
+RETURN a,b
+
+========================================================================================================================
+
+**Creating Floor 2, Ward Node 5 Node and Relation Between Them.**
+
+CREATE (Floor2:floor{number: "Floor 2"})
+-[:contains{noOfbeds:2}]->(Ward1:ward:full{wardNo:"W5", typeOfWard:"Semi Special Ward 1",bed17:"P15",bed18:"P16"})
+
+** Creating Ward Nodes for Floor 2**
+CREATE (Ward2:ward:full{wardNo:"W6", typeOfWard:"Semi Special Ward 2",bed19:"P17",bed20:"P18"})
+CREATE (Ward3:ward:available{wardNo:"W7", typeOfWard:"Semi Special Ward 3",bed21:"P19",bed22:""})
+CREATE (Ward4:ward:full{wardNo:"W8", typeOfWard:"Semi Special Ward 4",bed23:"P20",bed24:"P21"})
+
+** Creating Relation Between Ward Nodes and Floor 2**
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W6" AND b.number= "Floor 2"
+CREATE (b)-[:contains{noOfbeds:2}]->(a)
+RETURN a,b
+
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W7" AND b.number= "Floor 2"
+CREATE (b)-[:contains{noOfbeds:2}]->(a)
+RETURN a,b
+
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W8" AND b.number= "Floor 2"
+CREATE (b)-[:contains{noOfbeds:2}]->(a)
+RETURN a,b
+
+
+MATCH (a:floor),(b:hospital)
+WHERE a.number = "Floor 2" AND b.name = "SRH Hospital"
+CREATE (b)-[r:has]->(a)
+RETURN a,b
+-----------------
+**Creating Floor 3, Ward Node 9 Node and Relation Between Them.**
+CREATE (Floor3:floor{number: "Floor 3"})
+-[:contains{noOfbeds:1}]->(Ward9:ward:full{wardNo:"W9", typeOfWard:"Special Ward 1",bed25:"P22"})
+
+** Creating Ward Nodes for Floor 3**
+CREATE (Ward10:ward:full{wardNo:"W10", typeOfWard:"Special Ward 2",bed26:"P23"})
+CREATE (Ward11:ward:available{wardNo:"W11", typeOfWard:"Special Ward 3",bed27:""})
+CREATE (Ward12:ward:full{wardNo:"W12", typeOfWard:"Special Ward 4",bed28:"P24"})
+
+** Creating Relation Between Ward Nodes and Floor 3**
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W10" AND b.number= "Floor 3"
+CREATE (b)-[:contains{noOfbeds:1}]->(a)
+RETURN a,b
+
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W11" AND b.number= "Floor 3"
+CREATE (b)-[:contains{noOfbeds:1}]->(a)
+RETURN a,b
+
+MATCH (a:ward),(b:floor)
+WHERE a.wardNo = "W12" AND b.number= "Floor 3"
+CREATE (b)-[:contains{noOfbeds:1}]->(a)
+RETURN a,b
+
+
+MATCH (a:floor),(b:hospital)
+WHERE a.number = "Floor 3" AND b.name = "SRH Hospital"
+CREATE (b)-[r:has]->(a)
+RETURN a,b
+=======================================================================
+Query to get all nodes and relationships
+MATCH (n) RETURN (n)
+
+
