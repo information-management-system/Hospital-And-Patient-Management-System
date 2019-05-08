@@ -123,28 +123,23 @@ redis 127.0.0.1:6379> hgetall product6
  8) "6500"
  9) "manufacturer"
 10) "MedPlus"
-redis 127.0.0.1:6379> lpush productInformation product6
+redis 127.0.0.1:6379> lpush productsInformation product6
 (integer) 7
-redis 127.0.0.1:6379> lpush productInformation product5
+redis 127.0.0.1:6379> lpush productsInformation product5
 (integer) 8
-redis 127.0.0.1:6379> lpush productInformation product4
+redis 127.0.0.1:6379> lpush productsInformation product4
 (integer) 9
-redis 127.0.0.1:6379> lpush productInformation product3
+redis 127.0.0.1:6379> lpush productsInformation product3
 (integer) 10
-redis 127.0.0.1:6379> lpush productInformation product2
+redis 127.0.0.1:6379> lpush productsInformation product2
 (integer) 11
-redis 127.0.0.1:6379> lpush productInformation product1
+redis 127.0.0.1:6379> lpush productsInformation product1
 (integer) 12
-redis 127.0.0.1:6379> lrange productInformation 0 10
+redis 127.0.0.1:6379> lrange productsInformation 0 10
  1) "product1"
  2) "product2"
  3) "product3"
  4) "product4"
  5) "product5"
  6) "product6"
- 7) "product1"
- 8) "product2"
- 9) "product3"
-10) "product4"
-11) "product5"
 
